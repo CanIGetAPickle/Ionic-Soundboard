@@ -65,6 +65,14 @@ app.controller('SoundBoardCtrl', function ($scope, $window) {
 			}
 		]
 	};
+	$scope.deleteSound = function ($index) {
+		$scope.model.sounds.splice($index, 1);
+	};
+
+	$scope.moveSound = function (sound, fromIndex, toIndex) {
+		$scope.model.sounds.splice(fromIndex, 1);
+		$scope.model.sounds.splice(toIndex, 0, sound);
+	};
 
 	$scope.play = function (sound) {
 
